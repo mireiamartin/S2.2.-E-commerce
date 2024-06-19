@@ -128,6 +128,24 @@ function applyPromotionsCart() {
 // Exercise 5
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+    const cartList = document.getElementById("cart_list");
+    const totalPriceCart = document.getElementById("total_price");
+
+    applyPromotionsCart();
+
+    cartList.innerHTML = "";
+
+    cart.forEach(prod => {
+        cartList.innerHTML += `<tr>
+            <th scope="row">${prod.name}</th>
+            <td>${prod.price}</td>
+            <td>${prod.quantity}</td>
+            <td>${prod.subtotalWithDiscount > 0 ? prod.subtotalWithDiscount.toFixed(2) : (prod.price * prod.quantity).toFixed(2)}</td>
+        </tr>`;
+    });
+
+    let total = calculateTotal();
+    totalPriceCart.textContent = total.toFixed(2);
 }
 
 
