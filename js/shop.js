@@ -130,7 +130,7 @@ function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
     const cartList = document.getElementById("cart_list");
     const totalPriceCart = document.getElementById("total_price");
-
+    const countProduct = document.getElementById("count_product");
     applyPromotionsCart();
 
     cartList.innerHTML = "";
@@ -146,6 +146,7 @@ function printCart() {
 
     let total = calculateTotal();
     totalPriceCart.textContent = total.toFixed(2);
+    countProduct.textContent = cart.length
 }
 
 
