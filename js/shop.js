@@ -99,6 +99,16 @@ function cleanCart() {
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
+    total = 0;
+
+    for (let i = 0; i < cart.length; i++){
+        if (cart[i].subtotalWithDiscount){
+            total += cart[i].subtotalWithDiscount;
+        } else{
+            total += cart[i].price * cart[i].quantity;
+        }
+    }
+    return total;
 }
 
 // Exercise 4
