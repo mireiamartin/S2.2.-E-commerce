@@ -114,6 +114,15 @@ function calculateTotal() {
 // Exercise 4
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+    cart.forEach(product => {
+        if (product.offer && product.quantity >= product.offer.number){
+            const discount = product.offer.percent / 100;
+            const discountPrice = product.price * discount;
+            product.subtotalWithDiscount = (product.price - discountPrice) * product.quantity;
+        } else {
+            product.subtotalWithDiscount = product.price * product.quantity;
+        }
+    })
 }
 
 // Exercise 5
