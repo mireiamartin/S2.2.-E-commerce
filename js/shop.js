@@ -150,6 +150,7 @@ function printCart() {
 }
 
 
+
 // ** Nivell II **
 
 // Exercise 7
