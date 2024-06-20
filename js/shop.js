@@ -156,6 +156,17 @@ function printCart() {
 // Exercise 7
 function removeFromCart(id) {
 
+    const productInCart = cart.find(product => product.id === id);
+
+    if (productInCart) {
+        if (productInCart.quantity > 1) {
+            productInCart.quantity--;
+        } else {
+            cart = cart.filter(product => product.id !== id);
+        }
+    }
+    applyPromotionsCart();
+    printCart();
 }
 
 function open_modal() {
