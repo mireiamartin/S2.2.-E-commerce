@@ -1,0 +1,25 @@
+$primary: #d50283;
+$btn-border-width: none;
+$btn-color: white;
+$card-border-width: none;
+$card-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+header{
+    background-color: $primary
+}
+
+.card{
+    box-shadow: $card-box-shadow;
+}
+
+h5.fw-bolder{
+    color: $primary;
+}
+
+footer{
+    background-color: $primary;
+}
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
